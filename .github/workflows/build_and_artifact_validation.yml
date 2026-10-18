@@ -1,0 +1,21 @@
+name: Build and Artifact validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build ${{ matrix.artifact_type }} artifacts
+    strategy:
+      fail-fast: false
+      matrix:
+        artifact_type: [backend, frontend]
+
+    uses: devsecops/shared-github-actions/.github/workflows/build.yml@main
+    with:
+      artifact_type: ${{ matrix.artifact_type }}
+      xml_path: "./frontend"
+      pr_check: true
