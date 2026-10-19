@@ -18,5 +18,5 @@ jobs:
     uses: AkashRahane/shared-github-actions/.github/workflows/build.yml@main
     with:
       artifact_type: ${{ matrix.artifact_type }}
-      xml_path: "./frontend"
+      # xml_path: "./frontend"
       pr_check: true
