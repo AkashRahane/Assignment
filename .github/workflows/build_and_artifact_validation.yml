@@ -19,4 +19,4 @@ jobs:
     with:
       artifact_type: ${{ matrix.artifact_type }}
       xml_path: "./frontend"
-      pr_check: true
+      pr_check: false
